@@ -1,0 +1,16 @@
+# Battery Pipeline Take-Home Assessment Dependencies
+# Python 3.11+ required
+
+# Data handling
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Battery modeling
+pybamm>=24.1
+
+# Visualization
+matplotlib>=3.7.0
+
+# Optimization (optional - candidates may choose alternatives)
+scipy>=1.10.0
+
