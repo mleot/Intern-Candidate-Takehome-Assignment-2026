@@ -146,7 +146,7 @@ Note: You do not need to simulate every possible combination, nor achieve a "per
 - [ ] All source code (well-documented, comments)
 - [ ] requirements.txt or similar
 - [ ] Visualization example outputs (png format, or other image format, or markdownfiles with images embedded, or PDFs)
-- [ ] Presentation (Google Slides, PDF, pptx, or other format, ≤6 slides)
+- [ ] Presentation (PDF, pptx, or other format, ≤6 slides)
 
 ---
 
