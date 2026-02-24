@@ -18,7 +18,9 @@ You've received raw battery cycling data from a lab. Your task is to build a com
 
 ## Getting Started
 
-Use uv or pip to install requirements.txt into an environment of your choice.
+Download this repo. Make a private repository on Github and push this repo to it. 
+
+Use uv or pip to install requirements.txt into an environment of your choice. Install other dependencies as you see fit.
 
 ## Data
 
