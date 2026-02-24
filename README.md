@@ -2,37 +2,40 @@
 
 **Time Estimate**: 4-6 hours (can be split across sessions)
 
+## Important Notes:
+
+- Completing this take-home assignment is not strictly required to be considered as a candidate.
+- This take-home assignment is designed to be completed in your own time. You are not required to complete it within a specific time frame. 
+- You are not required to complete all phases. The most important thing is to demonstrate your thought process and how you would approach the problem.
+- If you wish to present your work which is related but not exactly the same as the take-home assignment, that is also acceptable as long as you can apply it uniquely to the data provided in the take-home assignment.
+- At minimum phase 6 should be completed, or some slides should be prepared prior to a technical interview.
+- You are free to use any tools or libraries you wish, including AI tools. You are free to do different phases in different programming languages if you wish. If you have an alternative to PyBaMM for battery simulation, that is also acceptable as long as it can be reproduced by the interviewer.
+
+
 ## Overview
 
 You've received raw battery cycling data from a lab. Your task is to build a complete data pipeline that cleans, simulates, stores, and visualizes battery performance data.
 
 ## Getting Started
 
-```bash
-# Create virtual environment
-python -m venv .venv
-source .venv/bin/activate  # or `.venv\Scripts\activate` on Windows
-
-# Install dependencies
-pip install -r requirements.txt
-```
+Use uv or pip to install requirements.txt into an environment of your choice.
 
 ## Data
 
-The file `data/raw_cycling_data.csv` contains discharge measurements for multiple battery cells across several cycles. The data has typical lab data quality issues that you'll need to address.
+The file `data/raw_cycling_data.csv` contains cycling data for multiple battery cells undergoing unique cycling protocols. The data has typical lab data quality issues, and poor protocol design issues that you'll need to address.
 
 ---
 
 ## Phase 1: Data Ingestion & Cleaning
 
-**Time estimate**: 30-45 minutes  
-**Deliverable**: Cleaned DataFrame with voltage, current, datetime columns
+**Time estimate**: 15-45 minutes  
+**Deliverable**: Code for task & csv output 
 
 ### Your task:
 
 1. Load the raw cycling data from `data/raw_cycling_data.csv`
 2. Identify and handle missing values
-3. Extract relevant columns (voltage, current, datetime)
+3. Ensure consistency and data availability in relevant columns (voltage, current, test time)
 4. Correct cycle/step indexing to be sequential
 5. Document your cleaning decisions
 
@@ -41,15 +44,15 @@ The file `data/raw_cycling_data.csv` contains discharge measurements for multipl
 ## Phase 2: Simulation & Comparison
 
 **Time estimate**: 45-60 minutes  
-**Deliverable**: Simulated discharge curves using PyBaMM
+**Deliverable**: Code for simulated cycling data using PyBaMM
 
 ### Your task:
 
-1. Use PyBaMM to simulate battery discharge curves
-2. Choose an appropriate model (DFN or SPMe recommended)
-3. Configure the model to match the experimental conditions
-4. Compare simulated vs experimental voltage curves
-5. Document model selection rationale
+1. Use PyBaMM to simulate identical cycling profiles as the experimental data.
+2. Choose an appropriate model (DFN, SPMe, SPM, etc.) and appropriate submodels and justify your choices.
+3. Configure the simulation to match the experimental conditions. You may need to make assumptions or simplifications.
+4. Run the simulations and compare simulated vs experimental voltage curves
+5. Document your process, problems solved, and general findings
 
 **Resources**:
 - [PyBaMM Documentation](https://docs.pybamm.org/)
@@ -60,16 +63,16 @@ The file `data/raw_cycling_data.csv` contains discharge measurements for multipl
 ## Phase 3: Database Design
 
 **Time estimate**: 30-45 minutes  
-**Deliverable**: Database schema (SQL or diagram)
+**Deliverable**: Database schema (SQL or diagram or other)
 
 ### Your task:
 
-Design a database schema that supports these query patterns:
+Design a database schema that logically supports these query patterns:
 
 1. "Show all cycles for CELL_A"
 2. "Compare simulation vs experiment for cycle 2"
 3. "List all parameter sets used with the DFN model"
-4. "Show voltage curves for all cells using SPMe model with default parameters"
+4. "Show voltage curves for all cells simulated using SPMe model with default parameters"
 
 Consider how to store:
 - Cell configurations
@@ -77,18 +80,20 @@ Consider how to store:
 - Model types and parameter sets
 - Simulation results
 
+You do not need to implement the database, just design the schema. You can use any database schema design tool or just describe the schema in text using exact key names and relationship maps.
+
 ---
 
 ## Phase 4: Database Population & Visualization
 
 **Time estimate**: 45-60 minutes  
-**Deliverable**: Populated database + visualization script
+**Deliverable**: Populated database, visualization script, and plot output example images
 
 ### Your task:
 
 1. Create the database (SQLite recommended)
 2. Populate with cleaned experimental data
-3. Run simulations for multiple parameter variations
+3. Run simulations for multiple parameter variations and models from phase 2
 4. Store simulation results
 5. Create a **decoupled** visualization script that:
    - Reads from the database
@@ -110,6 +115,8 @@ Consider how to store:
 4. Document the optimization approach and results
 5. Store optimized parameters in the database
 
+Note: You do not need to simulate every possible combination, nor achieve a "perfect" fit. The goal is to demonstrate your approach to parameter optimization.
+
 ---
 
 ## Phase 6: Results Preparation
@@ -121,21 +128,21 @@ Consider how to store:
 
 1. **Data Challenges**: What issues did you find and how did you handle them?
 2. **Architecture Decisions**: How did you structure your code and database?
-3. **Model Comparison**: How well do simulations match experiments?
+3. **Database Design**: How did you design your database schema and why is it effective for this problem?
 4. **Optimization Results**: Which parameters improved fit? By how much?
-5. **AI Usage**: How did you use AI tools? What worked well?
+5. **AI Usage**: How did you use AI tools (if any)? What worked well? What needed correction?
 6. **Scaling Considerations**: How would this scale to 1000+ cells?
 
 ---
 
 ## Deliverables Checklist
 
-- [ ] Cleaned data (CSV or in database)
-- [ ] Database file (SQLite)
-- [ ] Source code (well-organized)
+- [ ] Cleaned data (CSV and in database)
+- [ ] Database file (SQLite, populated)
+- [ ] All source code (well-documented, comments)
 - [ ] requirements.txt or similar
-- [ ] Visualization script (runs independently)
-- [ ] Presentation (PDF, ≤6 slides)
+- [ ] Visualization example outputs (png format, or other image format, or markdownfiles with images embedded, or PDFs)
+- [ ] Presentation (Google Slides, PDF, pptx, or other format, ≤6 slides)
 
 ---
 

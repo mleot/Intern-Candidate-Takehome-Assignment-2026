@@ -41,11 +41,6 @@ env/
 .coverage
 htmlcov/
 
-# SQLite databases (candidate creates these)
-*.db
-*.sqlite
-*.sqlite3
-
 # OS files
 .DS_Store
 Thumbs.db
