@@ -18,7 +18,7 @@ You've received raw battery cycling data from a lab. Your task is to build a com
 
 ## Getting Started
 
-Download this repo. Make a private repository on Github and push this repo to it. 
+Download this repo. Make a private repository on Github and push this repo to it. Share it with the username `mleot`, and commit & push your work as you go.
 
 Use uv or pip to install requirements.txt into an environment of your choice. Install other dependencies as you see fit.
 
