@@ -1,6 +1,6 @@
 # Battery Simulation & Data Pipeline Take-Home Assessment
 
-**Time Estimate**: 4-6 hours (can be split across sessions)
+**Time Estimate**: 3-6 hours (can be split across sessions)
 
 ## Important Notes:
 
@@ -10,6 +10,13 @@
 - If you wish to present your work which is related but not exactly the same as the take-home assignment, that is also acceptable as long as you can apply it uniquely to the data provided in the take-home assignment.
 - At minimum phase 6 should be completed, or some slides should be prepared prior to a technical interview.
 - You are free to use any tools or libraries you wish, including AI tools. You are free to do different phases in different programming languages if you wish. If you have an alternative to PyBaMM for battery simulation, that is also acceptable as long as it can be reproduced by the interviewer.
+
+**!! Lastly, do note: !!**
+- Submitting a completed and high quality assignment will improve your score on the technical interview.
+
+## Submission Notes
+
+- Full submission notes are specified in the email sent to the candidate, however it is reccomended to create the private fork of this repo and share it with GitHub username **_mleot_** (and email tleo@silanano.com that you have done so, as links expire) as soon as possible so we can see your progress.
 
 
 ## Overview
